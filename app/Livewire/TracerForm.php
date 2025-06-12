@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Models\Alumni;
 use App\Models\Tracer;
-use Flux\Flux;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
@@ -88,13 +87,6 @@ class TracerForm extends Component
         Alumni::where('nim', $this->nim)
             ->where('nomor_ijazah', $this->nomor_ijazah)
             ->update(['mengisi_tracer' => true]);
-
-        Flux::toast(
-            heading: 'Sukses',
-            text: 'Data berhasil disimpan.',
-            variant: 'success',
-            duration: 3000,
-        ); 
             
         $this->modal('fotoIjazah')->show();        
     }

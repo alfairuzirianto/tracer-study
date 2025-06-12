@@ -17,6 +17,8 @@
 </head>
 <body>
     <main>
+        @include('sweetalert2::index')
+        
         {{ $slot }}
     </main>
     

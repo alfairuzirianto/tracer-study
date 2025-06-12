@@ -41,9 +41,9 @@
             <flux:button wire:click="save" variant="primary" class="w-full mt-6 cursor-pointer">SUBMIT</flux:button>
         </form>
         {{-- <flux:link href="#" variant="subtle" class="text-sm text-center">Laporkan kesalahan data</flux:link> --}}
-        <flux:modal name="fotoIjazah" wire:close="backToHome" class="flex flex-col p-4 space-y-2" :dismissible="false">
-            <flux:heading size="xl">Ijazah Anda Asli</flux:heading>
-            <img src="{{ asset('storage/') . '/' . $foto_ijazah }}" alt="Foto ijazah {{ $alumni->nama ?? ''}}>
+        <flux:modal name="fotoIjazah" wire:close="backToHome" class="flex flex-col items-center justify-center p-8 space-y-2" :dismissible="false">
+            <flux:heading size="xl">Ijazah Anda Asli!</flux:heading>
+            <img width="200" src="{{ asset('storage/') . '/' . $foto_ijazah }}" alt="Foto ijazah {{ $alumni->nama ?? ''}}>
         </flux:modal>
     </div>
 </div>
