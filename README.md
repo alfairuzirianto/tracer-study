@@ -1,4 +1,4 @@
-# SISTEM TRACER STUDY ALUMNI MANAJEMEN INFORMATIKA
+# Sistem Tracer Study Alumni
 
 Aplikasi web untuk tracer study alumni Manajemen Informatika, membantu alumni melakukan verifikasi ijazah dan pelacakan data alumni secara online.
 
@@ -9,6 +9,15 @@ Aplikasi web untuk tracer study alumni Manajemen Informatika, membantu alumni me
 - Manajemen data alumni dan tracer study
 - Dashboard admin/dosen
 
+## Prerequisites
+
+Sebelum melakukan instalasi, pastikan Anda sudah menginstal:
+
+- **PHP** >= v8.2
+- **Composer**
+- **Node.js** & **npm**
+- **MySQL/MariaDB**
+
 ## Instalasi
 
 Ikuti langkah-langkah berikut untuk menjalankan aplikasi ini secara lokal:
@@ -16,8 +25,8 @@ Ikuti langkah-langkah berikut untuk menjalankan aplikasi ini secara lokal:
 ### 1. Clone Repository
 
 ```sh
-git clone https://github.com/username/sista-mi.git
-cd sista-mi
+git clone https://github.com/alfairuzirianto/tracer-study.git
+cd tracer-study
 ```
 
 ### 2. Install Dependency
@@ -82,6 +91,16 @@ atau untuk development:
 ```sh
 npm run dev
 ```
+
+### 9. Buat Symbolic Link Storage
+
+Agar file upload (seperti foto ijazah) dapat diakses publik, jalankan perintah berikut:
+
+```sh
+php artisan storage:link
+```
+
+Perintah ini akan membuat symbolic link dari `public/storage` ke folder `storage/app/public`.
 
 ## Akun Default
 
