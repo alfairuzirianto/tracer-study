@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Alumni;
 use App\Models\Tracer;
+use Flux\Flux;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
@@ -18,6 +19,8 @@ class TracerForm extends Component
     public $nama;
 
     public $nomor_ijazah;
+
+    public $foto_ijazah;
 
     public $isVerified;
 
@@ -61,6 +64,7 @@ class TracerForm extends Component
                 ->where('nomor_ijazah', $this->nomor_ijazah)
                 ->first();
             $this->nama = $this->alumni->nama;
+            $this->foto_ijazah = $this->alumni->foto_ijazah;
         }
     }
 
@@ -85,15 +89,19 @@ class TracerForm extends Component
             ->where('nomor_ijazah', $this->nomor_ijazah)
             ->update(['mengisi_tracer' => true]);
 
-        session()->flash('success', 'Data Tracer Study berhasil disimpan.');
-
-        $this->isVerified = false;
-        $this->nim = null;
-        $this->nama = null;
-        $this->nomor_ijazah = null;
-
+        Flux::toast(
+            heading: 'Sukses',
+            text: 'Data berhasil disimpan.',
+            variant: 'success',
+            duration: 3000,
+        ); 
+            
+        $this->modal('fotoIjazah')->show();        
+    }
+    
+    public function backToHome()
+    {
         $this->reset();
-        
         return redirect()->route('home');
     }
 
