@@ -46,7 +46,7 @@ npm install
 ### 3. Salin File Environment
 
 ```sh
-cp .env.example .env
+copy .env.example .env
 ```
 
 ### 4. Generate Application Key
