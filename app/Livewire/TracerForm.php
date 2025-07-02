@@ -50,6 +50,8 @@ class TracerForm extends Component
     #[Validate('required')]
     public $jabatan;
 
+    public $modalDisplay = 'hidden';
+
     public function mount()
     {
         $this->isVerified = session('is_verified', false);
@@ -88,6 +90,7 @@ class TracerForm extends Component
             ->where('nomor_ijazah', $this->nomor_ijazah)
             ->update(['mengisi_tracer' => true]);
             
+        $this->modalDisplay = '';
         $this->modal('fotoIjazah')->show();        
     }
     

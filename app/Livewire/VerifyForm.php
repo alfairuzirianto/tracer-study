@@ -16,6 +16,10 @@ class VerifyForm extends Component
     #[Validate('required|min:15')]
     public $nomor_ijazah;
 
+    public $modalIcon = 'exclamation-circle';
+    public $modalTitle = '';
+    public $modalText = '';
+
     public function verify()
     {
         $this->validate();
@@ -32,9 +36,15 @@ class VerifyForm extends Component
             ]);
             redirect()->route('form.tracerstudy');
         } else if ($alumni && $alumni->mengisi_tracer == true) {
-            $this->modal('filled')->show();
+            $this->modalIcon = 'exclamation-circle';
+            $this->modalTitle = 'Form Sudah Terisi';
+            $this->modalText = 'Anda sudah mengisi form ini sebelumnya.';
+            $this->modal('verificationResult')->show();
         } else {
-            $this->modal('notFound')->show();
+            $this->modalIcon = 'x-circle';
+            $this->modalTitle = 'Data Tidak Ditemukan';
+            $this->modalText = 'Pastikan data yang Anda masukkan benar, lalu coba lagi.';
+            $this->modal('verificationResult')->show();
         }
     }
 
