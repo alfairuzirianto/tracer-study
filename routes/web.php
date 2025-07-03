@@ -8,6 +8,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/form/verify', VerifyForm::class)->name('form.verify');
+Route::get('/tracerstudy/verification', VerifyForm::class)->name('tracerstudy.verification');
 
-Route::get('/form/tracerstudy', TracerForm::class)->name('form.tracerstudy');
+Route::get('/tracerstudy/form', TracerForm::class)->name('tracerstudy.form');

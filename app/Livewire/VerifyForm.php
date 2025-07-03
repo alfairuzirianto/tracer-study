@@ -34,7 +34,7 @@ class VerifyForm extends Component
                 'nim' => $this->nim,
                 'nomor_ijazah' => $this->nomor_ijazah,
             ]);
-            redirect()->route('form.tracerstudy');
+            redirect()->route('tracerstudy.form');
         } else if ($alumni && $alumni->mengisi_tracer == true) {
             $this->modalIcon = 'exclamation-circle';
             $this->modalTitle = 'Form Sudah Terisi';
