@@ -14,9 +14,9 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         return [
-            Stat::make('Rata-rata IPK', round(Alumni::average('ipk'), 2)),                
-            Stat::make('Rata-rata waktu tunggu', round(Tracer::average('waktu_tunggu'))),                
-            Stat::make('Rata-rata pendapatan', round(Tracer::average('pendapatan'))),                
+            Stat::make('Rata-rata IPK', round(Alumni::average('ipk'), 2) . '/4'),                
+            Stat::make('Rata-rata waktu tunggu', round(Tracer::average('waktu_tunggu')) . ' bulan'),                
+            Stat::make('Rata-rata pendapatan', 'Rp'. round(Tracer::average('pendapatan'))),                
         ];
     }
 }

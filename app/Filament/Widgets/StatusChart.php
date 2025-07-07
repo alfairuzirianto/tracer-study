@@ -11,6 +11,11 @@ class StatusChart extends ChartWidget
     protected static ?string $heading = 'Status alumni';
 
     public static ?int $sort = 4;
+    
+    protected int | string | array $columnSpan = [
+        'sm' => 'full',
+        'md' => 2
+    ];
 
     protected function getData(): array
     {

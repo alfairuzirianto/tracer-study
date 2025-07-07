@@ -12,7 +12,7 @@ class Dashboard extends \Filament\Pages\Dashboard
     {
         return [
             'sm' => 1,
-            'md' => 3,
+            'md' => 4,
         ];
     }
 }

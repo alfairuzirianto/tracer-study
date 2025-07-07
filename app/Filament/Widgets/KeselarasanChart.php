@@ -12,6 +12,11 @@ class KeselarasanChart extends ChartWidget
 
     public static ?int $sort = 3;
 
+    protected int | string | array $columnSpan = [
+        'sm' => 'full',
+        'md' => 2
+    ];
+
     protected function getData(): array
     {
         $sangat_erat = Tracer::where('keselarasan', 'Sangat Erat')->count();

@@ -13,6 +13,11 @@ class RespondenChart extends ChartWidget
 
     public static ?int $sort = 2;
 
+    protected int | string | array $columnSpan = [
+        'sm' => 'full',
+        'md' => 2
+    ];
+
     protected function getData(): array
     {
         $telah_mengisi = Tracer::count();
